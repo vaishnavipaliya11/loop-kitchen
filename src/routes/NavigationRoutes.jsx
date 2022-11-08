@@ -8,7 +8,6 @@ import { SideBar } from "../components/sidebar/SideBar";
 
 const NavigationRoutes = () => {
   const { isAuth } = useSelector((store) => store.auth);
-  console.log(isAuth);
   return (
     <div>
       {isAuth ? <Header /> : ""}
