@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./App.css";
 import { getAllUsers } from "./features/auth";
+import { NavigationRoutes } from "./routes/NavigationRoutes";
 
 function App() {
-  const { isAuth } = useSelector((store) => store.auth);
-  console.log(isAuth);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllUsers());
@@ -14,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>Loop kitchen</h1>
+      <NavigationRoutes/>
     </div>
   );
 }
