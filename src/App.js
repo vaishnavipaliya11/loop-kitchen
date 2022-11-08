@@ -12,8 +12,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h1>Loop kitchen</h1>
-      <NavigationRoutes/>
+      <NavigationRoutes />
     </div>
   );
 }
