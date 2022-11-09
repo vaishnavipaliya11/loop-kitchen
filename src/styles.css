@@ -1,26 +1,52 @@
-:root{
-    /* #ED2939 */
-    --primary-color:#FF0800;
-    --bg-color: rgb(241 245 249);
+:root {
+  /* #ED2939 */
+  --primary-color: #ff0800;
+  --bg-color: rgb(241 245 249);
 }
-.common-flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+/* common-classes */
+.common-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.common-col{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.common-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.main-container{
-    background-color: #cccccc;
-  height:100vh ; 
-  background-position: center ;
-  background-repeat: no-repeat; 
+/* Navigation layout classes */
+.main-container {
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100vw;
   background-size: cover;
   background-image: url("https://gttp.imgix.net/352610/x/0/14-best-pampanga-restaurants-kapampangan-food-best-sisig-buffet-fine-dining-private-dining-28.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883");
+}
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.parent-layout {
+  width: 100%;
+}
+.main-layout {
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* header */
+.header-container {
+  color: var(--primary-color);
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+}
+.header-container h2{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
 }
