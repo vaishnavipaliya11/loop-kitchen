@@ -9,7 +9,7 @@ import "../styles.css";
 const NavigationRoutes = () => {
   const { isAuth } = useSelector((store) => store.auth);
   return (
-    <div className="common-flex  main-layout">
+    <div className="common-flex main-layout">
       <>
         {!isAuth ? (
           <Routes>

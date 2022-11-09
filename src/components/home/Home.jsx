@@ -35,20 +35,18 @@ const Home = () => {
         </label>
       </div>
 
-      <div>
+      <div className="resturant-matched-container common-col">
         {resturantsMatched &&
           resturantsMatched.map((item, index) => {
             return (
-              <div>
-                <p
-                  onClick={() => {
-                    dispatch(addToSelectedRestaurant({ name: item.Name }));
-                    setResturantsMatched("");
-                  }}
-                >
-                  {item.Name}
-                </p>
-              </div>
+              <p className="rest-options"
+                onClick={() => {
+                  dispatch(addToSelectedRestaurant({ name: item.Name }));
+                  setResturantsMatched("");
+                }}
+              >
+                {item.Name}
+              </p>
             );
           })}
       </div>
