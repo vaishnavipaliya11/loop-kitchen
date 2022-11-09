@@ -1,0 +1,10 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    position: fixed;
+}
+.sidebar-container li{
+    padding: 0.5rem;
+}

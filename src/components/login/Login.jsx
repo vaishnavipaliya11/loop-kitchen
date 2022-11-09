@@ -13,7 +13,6 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const btnHandler = () => {
-
     const loggedUser = availableUserData.find(
       (item) =>
         item.username === authUserDetails.username &&
@@ -24,29 +23,27 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Login Page</h1>
-      
-        <label>
-          <input
-            placeholder="Enter your username"
-            name="username"
-            required
-            onChange={(e) => dispatch(userNameHandler(e.target.value))}
-          />
-        </label>
-        <label>
-          <input
-            name="password"
-            placeholder="Enter your password"
-            required
-            onChange={(e) => dispatch(passwordHandler(e.target.value))}
-          />
-        </label>
-        <button onClick={() => btnHandler()}>
-          Login
-        </button>
-        {errorMsg && <p>{errorMsg}</p>}
+
+      <label>
+        <input
+          placeholder="Enter your username"
+          name="username"
+          required
+          onChange={(e) => dispatch(userNameHandler(e.target.value))}
+        />
+      </label>
+      <label>
+        <input
+          name="password"
+          placeholder="Enter your password"
+          required
+          onChange={(e) => dispatch(passwordHandler(e.target.value))}
+        />
+      </label>
+      <button onClick={() => btnHandler()}>Login</button>
+      {errorMsg && <p>{errorMsg}</p>}
     </div>
   );
 };

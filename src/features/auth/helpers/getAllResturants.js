@@ -5,7 +5,7 @@ const getAllResturants = createAsyncThunk("resturants/all", async () => {
   try {
     const { data, status } = await axios({
       method: "GET",
-      url: "https://api.airtable.com/v0/appjWdL7YgpxIxCKA/restaurants?maxRecords=5&view=Grid%20view",
+      url: "https://api.airtable.com/v0/appjWdL7YgpxIxCKA/restaurants?maxRecords=9999&view=Grid%20view",
       headers: { authorization: "Bearer keyfXgn8PL6pB3x32" },
     });
     if (status === 200) {

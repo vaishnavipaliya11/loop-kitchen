@@ -1,6 +1,7 @@
+import "../sidebar/sideBar.css"
 const SideBar = () =>{
     return(
-        <div>
+        <div className="sidebar-container">
             <li>Home</li>
             <li>Bookmark</li>
         </div>
