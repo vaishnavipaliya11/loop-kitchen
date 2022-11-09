@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
 import "../card/card.css";
+import { addToBookMark } from "../../slices/bookMarkSlice";
 export const ResturantCard = ({ item }) => {
-  console.log(item.name);
+  console.log(item);
+  const dispatch = useDispatch();
   return (
     <div className="card-container">
       <iframe
@@ -11,9 +14,13 @@ export const ResturantCard = ({ item }) => {
         style={{ border: "0" }}
         allowfullscreen
       ></iframe>
-      <h3>{item.name}</h3>
+      <h3>{item.name || item}</h3>
       <div>
-        <button>bookmark</button>
+        <button
+          onClick={() => dispatch(addToBookMark({ restaurantName: item.name }))}
+        >
+          bookmark
+        </button>
         <button>delete</button>
       </div>
     </div>

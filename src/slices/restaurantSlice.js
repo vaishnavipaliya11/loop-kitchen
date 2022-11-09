@@ -11,7 +11,6 @@ const resturantSlice = createSlice({
   initialState,
   reducers: {
     addToSelectedRestaurant: (state, action) => {
-        console.log(action);
       state.selectedRes.push(action.payload);
     },
   },
