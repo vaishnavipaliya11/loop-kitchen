@@ -11,8 +11,9 @@ const BookMark = () => {
           return <ResturantCard item={item} />;
         })
       ) : (
-        <p>No Bookmarks Added</p>
+        ""
       )}
+      {allBookMarks.length === 0 ? <p>No Bookmarks Added</p>:""}
     </div>
   );
 };
