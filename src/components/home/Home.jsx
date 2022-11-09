@@ -25,13 +25,15 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <label>
-        <input
-          placeholder="Enter the name of resturant"
-          onChange={(e) => findResturant(e)}
-          className="resturant-input"
-        />
-      </label>
+      <div>
+        <label>
+          <input
+            placeholder="Enter the name of resturant"
+            onChange={(e) => findResturant(e)}
+            className="resturant-input"
+          />
+        </label>
+      </div>
 
       <div>
         {resturantsMatched &&
@@ -39,9 +41,10 @@ const Home = () => {
             return (
               <div>
                 <p
-                  onClick={() =>
-                    dispatch(addToSelectedRestaurant({ name: item.Name }))
-                  }
+                  onClick={() => {
+                    dispatch(addToSelectedRestaurant({ name: item.Name }));
+                    setResturantsMatched("");
+                  }}
                 >
                   {item.Name}
                 </p>
@@ -49,11 +52,13 @@ const Home = () => {
             );
           })}
       </div>
-      {selectedRes
-        ? selectedRes.map((item) => {
-            return <ResturantCard data={item} />;
-          })
-        : ""}
+      <div className="matched-restaurants">
+        {selectedRes
+          ? selectedRes.map((item) => {
+              return <ResturantCard item={item} />;
+            })
+          : ""}
+      </div>
     </div>
   );
 };

@@ -24,7 +24,7 @@ const NavigationRoutes = () => {
           ) : (
             <>
               <Route path="/" element={<Home />} />
-              <Route path="/" element={<BookMark />} />
+              <Route path="/bookmark" element={<BookMark />} />
             </>
           )}
         </Routes>
