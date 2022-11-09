@@ -5,6 +5,8 @@ import {
   userNameHandler,
   passwordHandler,
 } from "../../slices/authSlice";
+import "./login.css"
+import "../../styles.css"
 const Login = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const { availableUserData, authUserDetails } = useSelector(
@@ -23,14 +25,16 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h1>Login Page</h1>
+    <div className="main-container">
+  <div className="login-card common-row">
+      <h2>Sign In</h2>
 
       <label>
         <input
           placeholder="Enter your username"
           name="username"
           required
+          className="login-input"
           onChange={(e) => dispatch(userNameHandler(e.target.value))}
         />
       </label>
@@ -39,12 +43,15 @@ const Login = () => {
           name="password"
           placeholder="Enter your password"
           required
+          className="login-input"
           onChange={(e) => dispatch(passwordHandler(e.target.value))}
         />
       </label>
-      <button onClick={() => btnHandler()}>Login</button>
+      <button onClick={() => btnHandler()} className="login-btn">Login</button>
       {errorMsg && <p>{errorMsg}</p>}
     </div>
+    </div>
+  
   );
 };
 export { Login };

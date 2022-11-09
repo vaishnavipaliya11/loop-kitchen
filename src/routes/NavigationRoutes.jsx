@@ -5,32 +5,27 @@ import { Header } from "../components/header/Header";
 import { Home } from "../components/home/Home";
 import { Login } from "../components/login/Login";
 import { SideBar } from "../components/sidebar/SideBar";
-
+import "../styles.css";
 const NavigationRoutes = () => {
   const { isAuth } = useSelector((store) => store.auth);
   return (
-    <div>
-      {isAuth ? <Header /> : ""}
-
-      <div style={{"display":"flex","flexDirection":"row","justifyContent":"space-around"}}>
-      <div>
-        {isAuth ? <SideBar /> : ""}
-        </div>
-        <Routes>
-          {!isAuth ? (
-            <>
-              <Route path="/" element={<Login />} />
-            </>
-          ) : (
-            <>
+    <div className="common-flex">
+      <>
+        {!isAuth ? (
+          <Routes>
+            <Route path="/" element={<Login />} />
+          </Routes>
+        ) : (
+          <div>
+            <Header />
+            <SideBar />
+            <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/bookmark" element={<BookMark />} />
-            </>
-          )}
-        </Routes>
-        
-      </div>
-
+            </Routes>
+          </div>
+        )}
+      </>
     </div>
   );
 };

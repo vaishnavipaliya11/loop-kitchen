@@ -1,0 +1,39 @@
+.login-card {
+  margin: auto;
+  padding: 0.5rem;
+  background-color: var(--bg-color);
+  margin-top: 10rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  max-width: 15rem;
+}
+.login-card h2{
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+.login-input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  outline: var(--bg-color);
+}
+.login-btn {
+  margin: 1rem;
+
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+}
+.login-btn:hover {
+  color: var(--bg-color);
+  background-color: red;
+  cursor: pointer;
+  transition: 0.5s;
+}
