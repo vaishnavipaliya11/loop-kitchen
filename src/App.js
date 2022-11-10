@@ -6,14 +6,12 @@ import { getAllUsers } from "./features/auth";
 import { NavigationRoutes } from "./routes/NavigationRoutes";
 
 function App() {
-  const dispatch = useDispatch();
+
   const { isAuth } = useSelector((store) => store.auth);
-  useEffect(() => {
-    dispatch(getAllUsers());
-  }, []);
+
+
   return (
     <div className="App">
-
       <NavigationRoutes />
     </div>
   );

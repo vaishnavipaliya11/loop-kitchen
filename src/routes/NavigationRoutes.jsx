@@ -8,6 +8,7 @@ import { SideBar } from "../components/sidebar/SideBar";
 import "../styles.css";
 const NavigationRoutes = () => {
   const { isAuth } = useSelector((store) => store.auth);
+  console.log(isAuth);
   return (
     <div className="common-flex main-layout">
       <>

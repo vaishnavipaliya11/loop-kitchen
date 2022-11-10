@@ -1,10 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getAllUsers } from "../features/auth";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const initialState = {
-  isAuth: false,
+  isAuth: cookies.get("isAuth"),
   availableUserData: [],
-  authUserDetails: { username: "", password: "" },
+  authUserDetails: {
+    username: cookies.get("auth-user") ? cookies.get("auth-user") : "",
+    password: cookies.get("auth-password") ? cookies.get("auth-password") : "",
+  },
+};
+
+const saveDataInCookies = (username, password) => {
+  cookies.set("isAuth", JSON.stringify(true), { maxAge: 60 });
+  cookies.set("auth-user", username, { maxAge: 60 });
+  cookies.set("auth-password", password, { maxAge: 60 });
 };
 
 export const authSlice = createSlice({
@@ -25,17 +37,21 @@ export const authSlice = createSlice({
     },
     checklogin: (state, action) => {
       state.isAuth = true;
+      saveDataInCookies(
+        state.authUserDetails.username,
+        state.authUserDetails.password
+      );
     },
   },
   extraReducers: {
     [getAllUsers.pending]: (state) => {
-      state.isAuth = false;
+      // state.isAuth = false;
     },
     [getAllUsers.fulfilled]: (state, { payload }) => {
       state.availableUserData = payload;
     },
     [getAllUsers.rejected]: (state, { payload }) => {
-      state.isAuth = false;
+      // state.isAuth = false;
     },
   },
 });

@@ -4,12 +4,20 @@ import { getAllResturants } from "../../features/auth/helpers/getAllResturants";
 import { addToSelectedRestaurant } from "../../slices/restaurantSlice";
 import { ResturantCard } from "../card/ResturantCard";
 import "../home/home.css";
+
+import Cookies from 'universal-cookie';
+ 
 const Home = () => {
   const [resturantsMatched, setResturantsMatched] = useState([]);
   const dispatch = useDispatch();
   const { allResturantsData, selectedRes } = useSelector(
     (store) => store.resturants
   );
+
+const cookies = new Cookies();
+ 
+cookies.set('myCat', 'Pacman', { path: '/' });
+console.log(cookies.get('myCat'));
 
   useEffect(() => {
     dispatch(getAllResturants());

@@ -9,15 +9,15 @@ export const bookMarkSlice = createSlice({
   initialState,
   reducers: {
     addToBookMark: (state, action) => {
-        console.log(action.payload.restaurantName);
-        state.allBookMarks.push(action.payload.restaurantName);
+      state.allBookMarks.push(action.payload.restaurantName);
     },
-    removeFromBookMark: (state,action) =>{
-      console.log(action.payload.restaurantName);
-      state.allBookMarks.pop(action.payload.restaurantName)
-    }
+    removeFromBookMark: (state, action) => {
+      state.allBookMarks = state.allBookMarks.filter(
+        (item) => item !== action.payload.restaurantName
+      );
+    },
   },
   extraReducers: {},
 });
-export const { addToBookMark,removeFromBookMark } = bookMarkSlice.actions;
+export const { addToBookMark, removeFromBookMark } = bookMarkSlice.actions;
 export default bookMarkSlice.reducer;
