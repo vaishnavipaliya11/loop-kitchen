@@ -2,6 +2,7 @@
   /* #ED2939 */
   --primary-color: #ff0800;
   --bg-color: rgb(241 245 249);
+  --text-color:#f8fafc;
 }
 /* common-classes */
 .common-flex {

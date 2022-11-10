@@ -1,24 +1,36 @@
-.resturant-input{
-    padding: 0.5rem;
-    margin: 0.5rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    width: 20rem;
-    border: 1px solid grey;
+.resturant-input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  width: 20rem;
+  border: 1px solid grey;
 }
-.resturant-input:focus{
-    border: 1px solid var(--primary-color);
-    outline: 1px solid var(--primary-color);
+.resturant-input:focus {
+  border: 1px solid var(--primary-color);
+  outline: 1px solid var(--primary-color);
 }
-.matched-restaurants{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.matched-restaurants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.rest-options{
-    margin: 0.5rem;
-    padding: 0.3rem;
-    cursor: pointer;
-    width: 10rem;
-    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+.rest-options {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  width: 10rem;
+  box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+}
+
+.rest-options:hover {
+  background-color: rgb(226 232 240);
+  transition: 0.5s;
+}
+.resturant-matched-container {
+  width: max-content;
+  padding: 0.5rem;
+  margin: auto;
+  box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px,
+    rgb(0 0 0 / 30%) 0px 3px 7px -3px;
 }

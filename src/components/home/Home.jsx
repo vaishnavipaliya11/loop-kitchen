@@ -5,16 +5,12 @@ import { addToSelectedRestaurant } from "../../slices/restaurantSlice";
 import { ResturantCard } from "../card/ResturantCard";
 import "../home/home.css";
 
-import Cookies from 'universal-cookie';
- 
 const Home = () => {
   const [resturantsMatched, setResturantsMatched] = useState([]);
   const dispatch = useDispatch();
   const { allResturantsData, selectedRes } = useSelector(
     (store) => store.resturants
   );
-
-console.log(selectedRes);
 
   useEffect(() => {
     dispatch(getAllResturants());
@@ -40,11 +36,12 @@ console.log(selectedRes);
         </label>
       </div>
 
-      <div className="resturant-matched-container common-col">
-        {resturantsMatched &&
-          resturantsMatched.map((item, index) => {
+      {resturantsMatched && (
+        <div className="resturant-matched-container common-col">
+          {resturantsMatched.map((item, index) => {
             return (
-              <p className="rest-options"
+              <p
+                className="rest-options"
                 onClick={() => {
                   dispatch(addToSelectedRestaurant({ name: item.Name }));
                   setResturantsMatched("");
@@ -54,7 +51,9 @@ console.log(selectedRes);
               </p>
             );
           })}
-      </div>
+        </div>
+      )}
+
       <div className="matched-restaurants">
         {selectedRes
           ? selectedRes.map((item) => {
