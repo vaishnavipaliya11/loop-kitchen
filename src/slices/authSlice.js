@@ -14,9 +14,9 @@ const initialState = {
 };
 
 const saveDataInCookies = (username, password) => {
-  cookies.set("isAuth", JSON.stringify(true), { maxAge: 60 });
-  cookies.set("auth-user", username, { maxAge: 60 });
-  cookies.set("auth-password", password, { maxAge: 60 });
+  cookies.set("isAuth", JSON.stringify(true), { maxAge: 600 });
+  cookies.set("auth-user", username, { maxAge: 600 });
+  cookies.set("auth-password", password, { maxAge: 600 });
 };
 
 export const authSlice = createSlice({

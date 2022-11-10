@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../card/card.css";
 import { addToBookMark, removeFromBookMark } from "../../slices/bookMarkSlice";
+import { deleteFromSelectedRestaurant } from "../../slices/restaurantSlice";
 import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
-import {AiFillDelete} from "react-icons/ai"
+import { AiFillDelete } from "react-icons/ai";
 export const ResturantCard = ({ item }) => {
   const dispatch = useDispatch();
-  const { allBookMarks } = useSelector((store) => store.bookmark);
-  console.log(allBookMarks, "all bookmarks");
+  const { allBookMarks } = useSelector(store => store.bookmark);
   return (
     <div className="card-container">
       <iframe
@@ -26,7 +26,7 @@ export const ResturantCard = ({ item }) => {
               dispatch(removeFromBookMark({ restaurantName: item.name }))
             }
           >
-            <BsFillBookmarkFill/>
+            <BsFillBookmarkFill />
           </button>
         ) : (
           <button
@@ -34,12 +34,19 @@ export const ResturantCard = ({ item }) => {
               dispatch(addToBookMark({ restaurantName: item.name }))
             }
           >
-            <BsBookmark/>
+            <BsBookmark />
           </button>
         )}
 
-
-        <button><AiFillDelete/></button>
+        <button
+          onClick={() =>
+            dispatch(
+              deleteFromSelectedRestaurant({ restaurantName: item.name })
+            )
+          }
+        >
+          <AiFillDelete />
+        </button>
       </div>
     </div>
   );

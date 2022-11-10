@@ -14,10 +14,7 @@ const Home = () => {
     (store) => store.resturants
   );
 
-const cookies = new Cookies();
- 
-cookies.set('myCat', 'Pacman', { path: '/' });
-console.log(cookies.get('myCat'));
+console.log(selectedRes);
 
   useEffect(() => {
     dispatch(getAllResturants());

@@ -13,6 +13,9 @@ const resturantSlice = createSlice({
     addToSelectedRestaurant: (state, action) => {
       state.selectedRes.push(action.payload);
     },
+    deleteFromSelectedRestaurant: (state,action)=>{
+      state.selectedRes= state.selectedRes.filter(data => data.name !== action.payload.restaurantName)
+    }
   },
   extraReducers: {
     [getAllResturants.pending]: (state) => {
@@ -26,5 +29,5 @@ const resturantSlice = createSlice({
     },
   },
 });
-export const { addToSelectedRestaurant } = resturantSlice.actions;
+export const { addToSelectedRestaurant ,deleteFromSelectedRestaurant} = resturantSlice.actions;
 export default resturantSlice.reducer;
