@@ -26,9 +26,9 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div>
+      <div className="home-input">
         <label>
-          <input
+          <input 
             placeholder="Enter the name of resturant"
             onChange={(e) => findResturant(e)}
             className="resturant-input"

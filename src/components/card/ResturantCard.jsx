@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../card/card.css";
-import "../../styles.css"
+import "../../styles.css";
 import { addToBookMark, removeFromBookMark } from "../../slices/bookMarkSlice";
 import { deleteFromSelectedRestaurant } from "../../slices/restaurantSlice";
 import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
@@ -10,12 +10,30 @@ export const ResturantCard = ({ item }) => {
   const { allBookMarks } = useSelector((store) => store.bookmark);
   return (
     <div className="card-container">
+      {/* <iframe
+        width="600"
+        height="450"
+        src="https://datastudio.google.com/embed/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC"
+        frameborder="0"
+        style="border:0"
+        allowfullscreen
+      ></iframe> */}
+
+      <iframe
+        width="300"
+        height="300"
+        src="https://datastudio.google.com/u/0/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC?params=%7B%22ds2.name2%22:%22Subway%22%7D"
+        frameborder="0"
+        // style="border:0"
+        allowfullscreen
+      ></iframe>
+
       <iframe
         width="200"
-        height="200"
-        src="https://datastudio.google.com/u/0/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC"
-        frameBorder="0"
-        style={{ border: "0" }}
+        height="150"
+        src="https://datastudio.google.com/embed/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC"
+        frameborder="0"
+        // style="border:0"
         allowfullscreen
       ></iframe>
 
@@ -23,15 +41,17 @@ export const ResturantCard = ({ item }) => {
         <div>{item.name || item}</div>
         <div>
           {allBookMarks.find((data) => data === item.name) ? (
-            <button  className="card-btns"
+            <button
+              className="card-btns"
               onClick={() =>
                 dispatch(removeFromBookMark({ restaurantName: item.name }))
               }
             >
-              <BsFillBookmarkFill  />
+              <BsFillBookmarkFill />
             </button>
           ) : (
-            <button  className="card-btns"
+            <button
+              className="card-btns"
               onClick={() =>
                 dispatch(addToBookMark({ restaurantName: item.name }))
               }
@@ -40,14 +60,15 @@ export const ResturantCard = ({ item }) => {
             </button>
           )}
 
-          <button  className="card-btns"
+          <button
+            className="card-btns"
             onClick={() =>
               dispatch(
                 deleteFromSelectedRestaurant({ restaurantName: item.name })
               )
             }
           >
-            <RiDeleteBin6Fill style={{"fontSize":"1rem"}} />
+            <RiDeleteBin6Fill style={{ fontSize: "1rem" }} />
           </button>
         </div>
       </div>
