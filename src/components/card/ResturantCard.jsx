@@ -8,43 +8,26 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 export const ResturantCard = ({ item }) => {
   const dispatch = useDispatch();
   const { allBookMarks } = useSelector((store) => store.bookmark);
+  console.log(allBookMarks, "card");
+  console.log(item, "item");
   return (
     <div className="card-container">
-      {/* <iframe
-        width="600"
-        height="450"
-        src="https://datastudio.google.com/embed/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC"
-        frameborder="0"
-        style="border:0"
-        allowfullscreen
-      ></iframe> */}
-
-      <iframe
-        width="300"
-        height="300"
-        src="https://datastudio.google.com/u/0/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC?params=%7B%22ds2.name2%22:%22Subway%22%7D"
-        frameborder="0"
-        // style="border:0"
-        allowfullscreen
-      ></iframe>
-
       <iframe
         width="200"
         height="150"
         src="https://datastudio.google.com/embed/reporting/430242fa-4162-4950-a984-824b3b355b3c/page/dQMwC"
         frameborder="0"
-        // style="border:0"
         allowfullscreen
       ></iframe>
 
       <div className="card-details">
         <div>{item.name || item}</div>
         <div>
-          {allBookMarks.find((data) => data === item.name) ? (
+          {allBookMarks.find((data) => data === item || item.name) ? (
             <button
               className="card-btns"
               onClick={() =>
-                dispatch(removeFromBookMark({ restaurantName: item.name }))
+                dispatch(removeFromBookMark({ restaurantName: item.name || item }))
               }
             >
               <BsFillBookmarkFill />
@@ -53,7 +36,7 @@ export const ResturantCard = ({ item }) => {
             <button
               className="card-btns"
               onClick={() =>
-                dispatch(addToBookMark({ restaurantName: item.name }))
+                dispatch(addToBookMark({ restaurantName: item.name || item }))
               }
             >
               <BsBookmark />
@@ -64,7 +47,7 @@ export const ResturantCard = ({ item }) => {
             className="card-btns"
             onClick={() =>
               dispatch(
-                deleteFromSelectedRestaurant({ restaurantName: item.name })
+                deleteFromSelectedRestaurant({ restaurantName: item.name || item})
               )
             }
           >

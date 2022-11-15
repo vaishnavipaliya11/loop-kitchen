@@ -36,7 +36,7 @@ const Home = () => {
         </label>
       </div>
 
-      {resturantsMatched && (
+      {resturantsMatched? (
         <div className="resturant-matched-container common-col">
           {resturantsMatched.map((item, index) => {
             return (
@@ -52,12 +52,12 @@ const Home = () => {
             );
           })}
         </div>
-      )}
+      ) :""}
 
       <div className="matched-restaurants">
         {selectedRes
-          ? selectedRes.map((item) => {
-              return <ResturantCard item={item} />;
+          ? selectedRes.map(({name}) => {
+              return <ResturantCard item={name} />;
             })
           : ""}
       </div>

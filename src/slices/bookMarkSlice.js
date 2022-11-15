@@ -2,11 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
-
-const saveDataInCookies = (data)=>{
-  console.log(data,"data");
-  // cookies.set("bookmark", JSON.stringify(state.allBookMarks), { maxAge: 600 });
-}
 const initialState = {
   allBookMarks:cookies.get("bookmark") ? cookies.get("bookmark") : [],
 };

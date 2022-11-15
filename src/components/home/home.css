@@ -3,7 +3,7 @@
   margin: 0.5rem;
   font-size: 1rem;
   border-radius: 10px;
-  width: 20rem;
+  width: max-content;
   border: 1px solid grey;
 }
 .resturant-input:focus {
@@ -12,8 +12,7 @@
 }
 .matched-restaurants {
   display: flex;
-  justify-content: center;
-  align-items: center;
+margin-bottom: 8rem;
   flex-wrap: wrap;
 }
 .rest-options {
@@ -29,7 +28,8 @@
   transition: 0.5s;
 }
 .resturant-matched-container {
-  width: max-content;
+  width: 20rem;
+  border-radius: 15px;
   padding: 0.5rem;
   margin: auto;
   box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px,
