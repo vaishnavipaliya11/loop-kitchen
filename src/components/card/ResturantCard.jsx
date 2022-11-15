@@ -8,8 +8,8 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 export const ResturantCard = ({ item }) => {
   const dispatch = useDispatch();
   const { allBookMarks } = useSelector((store) => store.bookmark);
-  console.log(allBookMarks, "card");
-  console.log(item, "item");
+  // console.log(allBookMarks, "card");
+  // console.log(item, "item");
   return (
     <div className="card-container">
       <iframe

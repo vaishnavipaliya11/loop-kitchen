@@ -35,13 +35,16 @@ export const authSlice = createSlice({
         password: action.payload,
       };
     },
-    checklogin: (state, action) => {
+    checklogin: (state) => {
       state.isAuth = true;
       saveDataInCookies(
         state.authUserDetails.username,
         state.authUserDetails.password
       );
     },
+    logout:(state) =>{
+      state.isAuth= false
+    }
   },
   extraReducers: {
     [getAllUsers.pending]: (state) => {
@@ -55,6 +58,6 @@ export const authSlice = createSlice({
     },
   },
 });
-export const { checklogin, userNameHandler, passwordHandler } =
+export const { checklogin, userNameHandler, passwordHandler,logout } =
   authSlice.actions;
 export default authSlice.reducer;

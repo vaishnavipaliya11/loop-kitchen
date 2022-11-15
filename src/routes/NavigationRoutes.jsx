@@ -4,6 +4,7 @@ import { BookMark } from "../components/bookmark/BookMark";
 import { Header } from "../components/header/Header";
 import { Home } from "../components/home/Home";
 import { Login } from "../components/login/Login";
+import { Profile } from "../components/profile/Profile";
 import { SideBar } from "../components/sidebar/SideBar";
 import "../styles.css";
 const NavigationRoutes = () => {
@@ -26,8 +27,10 @@ const NavigationRoutes = () => {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/bookmark" element={<BookMark />} />
+                  <Route path="/profile" element={<Profile />} />
                 </Routes>
               </div>
+            
             </div>
           </div>
         )}
