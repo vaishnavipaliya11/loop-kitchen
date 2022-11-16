@@ -19,7 +19,7 @@ const Profile =() =>{
     return(
         <div>
             <p>Name:{authUserDetails?.username}</p>
-            <button onClick={()=> logoutHandler()}>Logout</button>
+            <button  className="login-btn" onClick={()=> logoutHandler()}>Logout</button>
         </div>
     )
 }
